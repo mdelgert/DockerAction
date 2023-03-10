@@ -3,7 +3,9 @@ FROM ubuntu:18.04
 #COPY nginx/files/default /etc/nginx/sites-available/default
 #COPY nginx/files/index.html /usr/share/nginx/html/index.html
 #COPY main.py main.py
-RUN echo "Test" > test.txt
+RUN mkdir output
+RUN echo "Test1" > output/test1.txt
+RUN echo "Test2" > output/test2.txt
 #EXPOSE 80
 #CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 CMD ["echo","Hello Docker Action!"] 

@@ -10,6 +10,10 @@ https://www.tutorialspoint.com/docker/docker_file.htm
 
 https://www.tutorialspoint.com/docker/building_docker_files.htm
 
+https://docs.docker.com/engine/reference/commandline/cp/
+
+https://learn.microsoft.com/en-us/azure-sphere/app-development/continuous-integration
+
 docker build -t dockeraction1:1.0 .
 
 docker run -d -p 80:80 --name test2 dockeraction1:1.0
