@@ -17,5 +17,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: test.txt
-          path: /test.txt
+          path: test.txt
           retention-days: 5
