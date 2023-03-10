@@ -22,7 +22,7 @@ jobs:
           path: math-homework.txt
 
   job_2:
-    name: Test1
+    name: Test2
     runs-on: ubuntu-latest
     steps:
       - shell: bash
