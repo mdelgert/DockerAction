@@ -6,4 +6,4 @@ FROM ubuntu:18.04
 RUN echo "Test" > test.txt
 #EXPOSE 80
 #CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
-CMD ["echo","Hello Docker Action!"] 
+CMD ["echo","Hello Docker GitHub Action!"] 
