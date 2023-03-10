@@ -13,13 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag test 
-        docker cp test:/test.txt .
-    - name: Copy File
+        docker build --target build -t hlbuildimage -f Dockerfile .
+        docker run --name hlbuildcontainer hlbuildimage
+    - name: Copy container build output
+      run:
+        docker cp hlbuildcontainer:/test.txt .
+    - name: Publish Test
       uses: actions/upload-artifact@v3
       with:
-        name: test
-        path: /home/runner/work/DockerAction/DockerAction/test.txt
+        name: Test
+        path: ${{github.workspace}}/test.txt
