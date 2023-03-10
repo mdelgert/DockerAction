@@ -15,7 +15,6 @@ jobs:
     steps:
     - name: Build the Docker image
       uses: actions/upload-artifact@v3
-      run: docker build . --file Dockerfile --tag dockeraction:$(date +%s)
       with:
           name: test.txt
           path: /test.txt
