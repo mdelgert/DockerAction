@@ -9,13 +9,14 @@ on:
 jobs:
 
   build:
-    name: Build
+
     runs-on: ubuntu-latest
+
     steps:
+      - uses: actions/checkout@v3
       - name: Build the Docker image
-        uses: actions/checkout@v3
         run: docker build . --file Dockerfile --tag test:$(date +%s)
-      - name: Upload test1
+      - name: Export file
         uses: actions/upload-artifact@v3
         with:
           name: test
