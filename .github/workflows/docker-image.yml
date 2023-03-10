@@ -8,14 +8,24 @@ on:
 
 jobs:
 
+  job_1:
+    name: Test1
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          expr 3 + 7 > math-homework.txt
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: homework
+          path: math-homework.txt
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v3
     - name: Build the Docker image
-      uses: actions/upload-artifact@v3
-      with:
-          name: test.txt
-          path: test.txt
-          retention-days: 5
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)

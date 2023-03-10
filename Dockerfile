@@ -4,6 +4,6 @@ FROM ubuntu:18.04
 #COPY nginx/files/index.html /usr/share/nginx/html/index.html
 #COPY main.py main.py
 RUN echo "Test" > test.txt
-#EXPOSE 80
+EXPOSE 80
 #CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
-CMD ["echo","Hello Docker GitHub Action!"] 
+CMD ["echo","Hello Docker Action!"] 
