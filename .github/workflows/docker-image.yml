@@ -15,7 +15,7 @@ jobs:
       - name: Build the Docker image
         uses: actions/checkout@v3
         run: docker build . --file Dockerfile --tag test:$(date +%s)
-      - name: Upload test
+      - name: Upload test1
         uses: actions/upload-artifact@v3
         with:
           name: test
