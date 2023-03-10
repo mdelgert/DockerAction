@@ -21,6 +21,16 @@ jobs:
           name: homework
           path: math-homework.txt
 
+  job_2:
+    name: Test2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload test
+        uses: actions/upload-artifact@v3
+        with:
+          name: test
+          path: test.txt
+
   build:
 
     runs-on: ubuntu-latest
