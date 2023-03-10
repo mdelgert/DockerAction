@@ -12,14 +12,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout 
-    uses: actions/checkout@v2
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag test:$(date +%s)
+    - name: Upload File
+        uses: actions/upload-artifact@v3
+        with:
+          name: test
+          path: test.txt
 
-  - name: Set up Docker Buildx
-    uses: docker/setup-buildx-action@v1
-
-  - name: Run Buildx
-    run: |
-      docker buildx build -f Dockerfile --output . .
- 
