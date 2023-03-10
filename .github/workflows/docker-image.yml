@@ -27,6 +27,7 @@ jobs:
     steps:
       - name: Upload test
         uses: actions/upload-artifact@v3
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
         with:
           name: test
           path: test.txt
