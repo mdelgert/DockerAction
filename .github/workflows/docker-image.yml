@@ -15,7 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag test & docker cp test:/test.txt .
+      run: |
+        docker build . --file Dockerfile --tag test 
+        docker cp test:/test.txt .
     - name: Copy File
       uses: actions/upload-artifact@v3
       with:
