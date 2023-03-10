@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag test:$(date +%s)
     - name: Copy File
-        uses: actions/upload-artifact@v3
-        with:
-          name: test.txt
-          path: /test.txt
+      uses: actions/upload-artifact@v3
+      with:
+        name: test
+        path: /test.txt
