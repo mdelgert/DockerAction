@@ -22,12 +22,13 @@ jobs:
           path: math-homework.txt
 
   job_2:
-    name: Test2
+    name: Test1
     runs-on: ubuntu-latest
     steps:
-      - name: Upload test
+      - shell: bash
+        run: docker build . --file Dockerfile --tag test:$(date +%s)
+      - name: Test
         uses: actions/upload-artifact@v3
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
         with:
           name: test
           path: test.txt
